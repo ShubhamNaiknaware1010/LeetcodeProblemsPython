@@ -7,13 +7,18 @@
 # @lc code=start
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        # create  a dictionary using the num : complement
-        dict = { num : target - num for num in nums }
+        #create dictionary to store complement and its index
+        dict = {}
         # iterate over the array 
         for i,num in enumerate(nums):
+            # calculate the complement of number
             complement = target - num
+            #check if complement exists in dict
             if complement in dict:
-                return [i,nums.index(complement)]
+                # return index of number (i) and index of complement stored in nums[complement]
+                return [i,dict[complement]]
+            # Add  the num as a key and complement as value
+            dict[num] = i
                 
 # @lc code=end
 

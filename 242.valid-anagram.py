@@ -21,6 +21,5 @@ class Solution:
                 """
         return Counter(s) == Counter(t) 
         
-
                 
 # @lc code=end
